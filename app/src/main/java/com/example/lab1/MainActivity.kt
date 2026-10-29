@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
 @PreviewScreenSizes
 @Composable
 fun Lab1App() {
-    var currentDestination by rememberSaveable { mutableStateOf(AppDestinations.STATISTIC) }
+    var currentDestination by rememberSaveable { mutableStateOf(AppDestinations.HOME) }
 
     NavigationSuiteScaffold(
         navigationSuiteItems = {
@@ -69,7 +69,9 @@ enum class AppDestinations(
     val label: String,
     val icon: Int,
 ) {
-    STATISTIC(label = "Statistics", R.drawable.ic_account_box),
+    HOME(label = "Home", icon = R.drawable.ic_home),
+    CAT(label = "Cat", R.drawable.ic_cat),
+    DOG(label = "Dog", icon = R.drawable.ic_dog)
 
 
 }
