@@ -9,21 +9,20 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.lab1.ViewModels.AppViewModel
+import com.example.lab1.ViewModels.CatViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Composable
-fun CatScreen(modifier: Modifier,appViewModel: AppViewModel = viewModel()){
+fun CatScreen(modifier: Modifier, catViewModel: CatViewModel = viewModel()){
 
-    val currentCat by appViewModel.CurrentCat.collectAsStateWithLifecycle()
-    val currentCatImage by appViewModel.CurrentCatImage.collectAsStateWithLifecycle()
+    val currentCat by catViewModel.CurrentCat.collectAsStateWithLifecycle()
+    val currentCatImage by catViewModel.CurrentCatImage.collectAsStateWithLifecycle()
     Column(
         modifier = modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -38,7 +37,7 @@ fun CatScreen(modifier: Modifier,appViewModel: AppViewModel = viewModel()){
         )
         Button(
             modifier = Modifier.fillMaxWidth().padding(horizontal = 15.dp),
-            onClick ={ appViewModel.changeCat()}
+            onClick ={ catViewModel.changeCat()}
         ){
             Text(
                 text = "Наступна порода"

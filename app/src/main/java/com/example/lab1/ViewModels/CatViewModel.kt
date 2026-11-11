@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
-class AppViewModel: ViewModel() {
+class CatViewModel: ViewModel() {
     private val _cats = listOf("Сіамський", "Мейнкун", "Британець")
     private val _images = listOf(R.drawable.cat1,R.drawable.cat2,R.drawable.cat3)
     private var _currentIndx: Int = 0;
